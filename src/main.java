@@ -37,7 +37,11 @@ public class main {
 
 
         Map<String, String> map = new HashMap<>();
+
+        // a map that contain the new object which have been calculated
         Map<String, String> clone = new HashMap<>();
+
+        // a map that contain all circular objects
         Map<String, String> detectedMap = new HashMap<>();
 
         int i = 0;
@@ -142,6 +146,14 @@ public class main {
         return sortedMap;
     }
 
+
+    /*
+    * determine if the map can be calculate or not
+    *
+    * if yes, replace all alphabet values with the numeric values
+    * if not, create a map that have these circular objects
+    *
+    * */
     private static boolean isCalculable(Map<String, String> map, Map<String, String> clone) {
 
         Map<String, Double> mapDouble = new HashMap<>();
@@ -247,6 +259,9 @@ public class main {
         return subStr;
     }
 
+    /*
+    * using prefix notation algorithm
+    * */
     private static List<String> convertToPostFix(String[] exp) {
         List<String> stack = new ArrayList<>();
         List<String> output = new ArrayList<>();
